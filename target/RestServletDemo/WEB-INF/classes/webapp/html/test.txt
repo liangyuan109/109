@@ -1,0 +1,62 @@
+<top>
+<num> Number:01
+<title>Search engine
+<desc>Description:
+what is the search engine?
+<narr>Narrative:
+Relevant documents must include details of what is the search engine.Relevant details include
+information about search engine,descriptions of the definition，introduction and instruction.
+</top>
+
+<top>
+<num> Number:02
+<title>Retrieval Tasks
+<desc>Description:
+how to do with retrieval task?
+<narr>Narrative:
+Relevant documents must include details of instruction about retrieval task.which language use users to describe their goals.
+</top>
+
+<top>
+<num> Number:03
+<title>Retrieval Model
+<desc>Description:
+what is Retrieval Model?
+<narr>Narrative:
+Relevant documents must include describe of retrieval model,the goal of retrieval model to design and overview of retrieval model.How 
+to do with classification of retrieval model. 
+</top>
+
+<top>
+<num> Number:04
+<title>improving search result summaries
+<desc>Description:
+How search result summaries is improved.
+<narr>Narrative:
+Relevant documents must include details of How search result summaries is or has been improved.
+</top>
+
+<top>
+<num> Number:05
+<title>Users and interactive
+<desc>Description:
+What is users and interactive. 
+<narr>Narrative:
+Relevant documents must include describe of users and interactive.The goal of improving users and interactive.
+</top>
+
+<top>
+<num> Number:06
+<title>Evaluation Corpus
+<desc>Description:
+What is Evaluation Corpus. 
+<narr>Narrative:
+Relevant documents must include describe of Evaluation Corpus.
+</top>
+
+<top>
+<num> Number:07
+<title>
+<desc>Description: 
+<narr>Narrative:
+</top>

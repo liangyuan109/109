@@ -1,0 +1,44 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>第37款插件：jquery.autocomplete.js自动提示（加载JS数据）</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="http://ijquery.360sites.cn/demo/css.css" media="all" />
+		<script type="text/javascript" src="http://ijquery.360sites.cn/js/jquery-1.7.2.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="http://ijquery.360sites.cn/js/jquery.autocomplete.css" media="all" />
+		<script type="text/javascript" src="http://ijquery.360sites.cn/js/jquery.autocomplete.js"></script>
+		<script type='text/javascript' src='city.js'></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#suggest1").focus().autocomplete(cities);
+			})
+		</script>
+	</head>
+	<body>
+		<center>
+			<div id="header">
+				<h1>第37款插件：jquery.autocomplete.js自动提示（加载JS数据）</h1>
+			</div>
+			
+			<div class="container">
+				<div id="container">
+					<center>
+						
+						
+						<!--start -->
+						<input type="text" id="suggest1" />	请输入 a 或 b 等字母 		
+						<!--end-->
+						
+						
+					</center>
+				</div>
+			</div>
+			
+			<div id="footer"></div>
+			
+			<script type="text/javascript" src="http://tajs.qq.com/stats?sId=19799522" charset="UTF-8"></script>
+		</center>
+	</body>
+</html>

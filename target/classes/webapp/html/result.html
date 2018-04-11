@@ -1,0 +1,185 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GoForIt</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/result.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+<!-- <script type="text/javascript"> -->
+<!--  function switchToText() -->
+<!--  { -->
+<!--  document.getElementById("id0").innerHTML = document.location.href; -->
+<!--  window.location.href = data.path[0]; -->
+<!--  } -->
+<!-- </script> -->
+</head>
+<body>
+<div id="container">
+	<div id="hd" class="ue-clear">
+    	<div class="logo" ></div>
+        <div class="inputArea">
+        	<form id="searchForm" action="result.html">
+			<input type="text" id="search-input" name="searchkey" class="searchInput" />
+       		<!-- <form action="result.html" id="searchForm"> -->
+       		<!-- <input type="text" class="searchInput" name="searchword"/> -->
+<!--             <input type="submit" class="searchButton" id="showtext"/>         -->
+            </form>
+        </div>
+    </div>
+    <div id="mySearchResults"></div>
+    <div class="nav">
+    </div>
+	<div id="bd" class="ue-clear">
+        <div id="main">
+        	<div class="sideBar">                               
+                <div class="sideBarShowHide">
+                	<a href="javascript:;" class="icon"></a>
+                </div>
+            </div>
+            <div class="resultArea" id="resultnum" value=55>
+            	<p class="resultTotal">
+                	<span class="info" id="resultinfo"></span>
+                    <span class="orderOpt">
+                    	<a href="javascript:;" class="byTime"></a>
+                        <a href="javascript:;" class="byDependence"></a>
+                    </span>
+                </p>
+                <div class="resultList" id="results">
+                	<div class="resultItem" id="idurl">
+                    	<div class="itemHead" id="id0">                   	
+                            <div class="divsion" id="idw0"></div>                           
+                        </div>                                              
+                    </div> 
+                    
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id1">                       	
+                            <div class="divsion" id="idw1"></div>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id2">                       	
+                            <span class="divsion" id="idw2">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id3">                       	
+                            
+                            <span class="divsion" id="idw3">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id4">                       	
+                            <span class="divsion" id="idw4">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id5">                       	
+                            <span class="divsion" id="idw5">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id6">                       	
+                            <span class="divsion" id="idw6">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id7">                       	
+                            <span class="divsion" id="idw7">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id8">                       	
+                            <span class="divsion" id="idw8">-</span>                           
+                        </div>                                              
+                    </div> 
+                    <div class="resultItem">
+                    	<div class="itemHead" id="id9">                       	
+                            <span class="divsion" id="idw9">-</span>                           
+                        </div>                                              
+                    </div> 
+                </div>
+                <!-- 分页 -->
+                <div class="pagination ue-clear" id="pageDiv"></div>
+                <!-- 相关搜索 -->
+                <div class="dependSearch ue-clear">                   
+                </div>
+            </div>
+            <div class="historyArea">           
+                <div class="mySearch">                  
+                </div>
+            </div>
+        </div><!-- End of main -->
+    </div><!--End of bd-->
+</div>
+<div id="foot">Copyright &copy;wangyuan  E-mail:beiwang603@gmail.com</div>
+</body>
+<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../js/searchtext.js"></script>
+<script type="text/javascript" src="../js/pagination.js"></script>
+<script type="text/javascript">	
+ 
+	let i = $("#resultnum").attr("value");
+	$(".pagination").pagination(i, {
+		current_page :0, //当前页码
+		items_per_page :9,
+		display_msg :true,
+		callback :pageselectCallback
+	});
+	
+	function pageselectCallback(page_id, jq) {
+		var mySearchWord = getParameterByName("searchkey");
+		$.post('http://localhost:8080/search/page/'+ page_id +"/"+ mySearchWord, function(data) {
+			emptyGraph();
+	    	drawGraph(data);
+	    }, "json");  
+	}
+	
+	function getParameterByName( name ) //courtesy Artem
+    {
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec( window.location.href );
+        if( results == null )
+            return "";
+        else
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+</script>
+<script type="text/javascript">	
+(function($) { 
+    $.fn.fixDiv = function(options) { 
+        var defaultVal = { 
+            top: 10 
+        }; 
+        var obj = $.extend(defaultVal, options); 
+        $this = this; 
+        var _top = $this.offset().top; 
+        var _left = $this.offset().left; 
+        $(window).scroll(function() { 
+            var _currentTop = $this.offset().top; 
+            var _scrollTop = $(document).scrollTop(); 
+            if (_scrollTop > _top) { 
+                $this.offset({ 
+                    top: _scrollTop + obj.top, 
+                    left: _left 
+                }); 
+            } else { 
+                $this.offset({ 
+                    top: _top, 
+                    left: _left 
+                }); 
+            } 
+        }); 
+        return $this; 
+    }; 
+})(jQuery); 
+$(function(){ 
+//     $('#logomini').fixDiv({ top: 0 });
+    $('#search-input').fixDiv({ top: 0 });
+   
+}); 
+</script>
+</html>
