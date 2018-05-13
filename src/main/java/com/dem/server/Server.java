@@ -64,7 +64,7 @@ public class Server {
   /**
    * Path to demo application
    */
-//  private static String strfilepath = "C:\\textdemo";
+//  private static String strfilepath = "C:\\SIGIR";
   private static final String APPLICATION_PATH = "RestServletDemo/html/searchtext.html";
   public final static String ENTITY_EXPANSION_LIMIT = "entityExpansionLimit";
   static final File INDEX_DIR = new File("./index");
@@ -95,7 +95,7 @@ public class Server {
     
     return server;
   }
-//  body { background:#fff; font: 12px/1.5 Tahoma,'ËÎÌå';color:#000;}
+//  body { background:#fff; font: 12px/1.5 Tahoma,'Ã‹ÃŽÃŒÃ¥';color:#000;}
   /**
    * Main method. Run this to start the server.
    *
@@ -121,7 +121,7 @@ public class Server {
    	 	saxParser.parse(is, bookHandler);
    	 	HashMap<String,ArrayList<SearchFileInfo>> sfi = bookHandler.getInfoList();
     	      
-   	 	String strfilepath = "C:\\SIGIR-plaintext\\SIGIR";
+   	 	String strfilepath = "C:\\SIGIR";
         MyIndexFiles mif = new MyIndexFiles();
         mif.SetMapList(sfi);
         File file = new File(strfilepath);
